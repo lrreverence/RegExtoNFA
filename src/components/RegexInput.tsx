@@ -1,4 +1,3 @@
-
 import { useState } from "react";
 import { Button } from "@/components/ui/button";
 import { Input } from "@/components/ui/input";
@@ -51,11 +50,10 @@ const RegexInput = ({ onSubmit, error }: RegexInputProps) => {
       <div className="bg-blue-50 rounded-md p-4">
         <h3 className="font-medium text-blue-800 mb-2">Input Format Guide</h3>
         <ul className="list-disc pl-5 text-sm text-blue-700">
-          <li>Use <code className="bg-blue-100 px-1 rounded">|</code> for alternative (OR) operations</li>
-          <li>Use <code className="bg-blue-100 px-1 rounded">*</code> for Kleene star (zero or more)</li>
-          <li>Use <code className="bg-blue-100 px-1 rounded">+</code> for one or more occurrences</li>
-          <li>Group expressions with parentheses <code className="bg-blue-100 px-1 rounded">()</code></li>
-          <li>Example: <code className="bg-blue-100 px-1 rounded">a(b|c)*d</code></li>
+          <li>Concatenation: <code className="bg-blue-100 px-1 rounded">ab</code> means a followed by b</li>
+          <li>Union (OR): <code className="bg-blue-100 px-1 rounded">a|b</code> means a or b</li>
+          <li>Kleene Star: <code className="bg-blue-100 px-1 rounded">a*</code> means zero or more of a</li>
+          <li>Grouping: <code className="bg-blue-100 px-1 rounded">(ab)</code> groups expressions</li>
         </ul>
       </div>
     </div>
