@@ -70,3 +70,51 @@ This project is built with:
 - Tailwind CSS
 - vis.js/D3.js (for visualization)
 
+## Setup Guide
+
+**Getting Started**
+
+### Clone the Repository
+
+Use either HTTPS or SSH to clone the project:
+- **HTTPS:**  
+  ```bash
+  git clone https://github.com/your-username/regex-nfa-dfa-visualizer.git
+  ```
+
+- **SSH:**  
+  ```bash
+  git clone git@github.com:your-username/regex-nfa-dfa-visualizer.git
+  ```
+
+Then navigate into the project folder:
+  ```bash
+   cd RegExtoNFA
+  ```
+### Install Dependencies
+
+Run the following command to install all the required dependencies. You can use npm or yarn depending on your preference:
+- **Using npm:**
+  ```bash
+  npm install  
+  ```
+- **Using yarn:**
+  ```bash
+  yarn install
+  ```
+
+### Run the Development Server
+
+To start the development server and run the application locally, use the following command:
+- **Using npm:**
+  ```bash
+  npm run dev
+  ```
+- **Using yarn:**
+  ```bash
+  yarn dev
+  ```
+
+
+
+
