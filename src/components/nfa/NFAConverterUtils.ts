@@ -1,5 +1,7 @@
 
 import { MarkerType } from "@xyflow/react";
+import { format } from "node:path/win32";
+import '@xyflow/react/dist/style.css';
 
 interface NFA {
   states: number[];
@@ -15,6 +17,8 @@ export interface FlowNode {
   data: any;
   position: { x: number; y: number };
   style?: Record<string, any>;
+  sourcePosition?: string;
+  targetPosition?: string;
 }
 
 export interface FlowEdge {
@@ -29,7 +33,6 @@ export interface FlowEdge {
   markerEnd?: any;
   labelBgStyle?: Record<string, any>;
   labelBgPadding?: number[];
-  sourceHandle?: string;
 }
 
 // Helper function to create a more symmetrical layout for NFA visualization
@@ -189,7 +192,9 @@ export const convertNFAToReactFlow = (nfa: NFA | null) => {
         isInitial,
         isAccepting
       },
-      position: position
+      position: position,
+      sourcePosition: 'right',
+      targetPosition: 'left',
     };
   });
 
@@ -210,6 +215,7 @@ export const convertNFAToReactFlow = (nfa: NFA | null) => {
         border: "none",
         background: "transparent",
       },
+      sourcePosition: 'right',
     });
   }
 
@@ -222,11 +228,12 @@ export const convertNFAToReactFlow = (nfa: NFA | null) => {
       id: 'initial-edge',
       source: 'initial-indicator',
       target: nfa.initialState.toString(),
+      label: 'start',
       type: 'default',
-      style: { stroke: '#22c55e', strokeWidth: 5 },
+      style: { stroke: '#3b82f6', strokeWidth: 3 },
       markerEnd: {
         type: MarkerType.Arrow,
-        color: '#22c55e',
+        color: '#3b82f6',
         width: 20,
         height: 20,
       },
@@ -254,13 +261,13 @@ export const convertNFAToReactFlow = (nfa: NFA | null) => {
             fill: '#000000', // Black text for better visibility
           },
           style: {
-            stroke: isEpsilon ? '#6b7280' : '#22c55e',
-            strokeWidth: 5, // Much thicker lines for better visibility
+            stroke: isEpsilon ? '#6b7280' : '#3b82f6',
+            strokeWidth: 3, // Much thicker lines for better visibility
             strokeDasharray: isEpsilon ? '5,5' : 'none',
           },
           markerEnd: {
             type: MarkerType.Arrow,
-            color: isEpsilon ? '#6b7280' : '#22c55e',
+            color: isEpsilon ? '#6b7280' : '#3b82f6',
             width: 20,
             height: 20,
           },
