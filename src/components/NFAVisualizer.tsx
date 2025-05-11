@@ -23,6 +23,8 @@ const NFAVisualizer = ({ nfa }) => {
 
     // Convert NFA to ReactFlow nodes and edges
     const { nodes: nfaNodes, edges: nfaEdges } = convertNFAToReactFlow(nfa);
+    console.log("Nodes:", nfaNodes);
+    console.log("Edges:", nfaEdges);
     
     setNodes(nfaNodes);
     setEdges(nfaEdges);
@@ -38,6 +40,8 @@ const NFAVisualizer = ({ nfa }) => {
   if (!nfa) {
     return <EmptyStateDisplay />;
   }
+
+
 
   const nodeTypes = {
     nfaState: NFAStateNode,
@@ -56,16 +60,16 @@ const NFAVisualizer = ({ nfa }) => {
           type: 'default',
           markerEnd: {
             type: MarkerType.Arrow,
-            color: '#22c55e',
-            width: 20,
-            height: 20,
+            color: '#3b82f6',
+            width: 10,
+            height: 10,
           },
           style: { 
-            stroke: '#22c55e', 
-            strokeWidth: 5 
+            stroke: '#3b82f6', 
+            strokeWidth: 5
           },
           labelBgStyle: { 
-            fill: 'white', 
+            fill: '#ffffff', 
             fillOpacity: 1,
             borderRadius: 4
           },
@@ -77,7 +81,7 @@ const NFAVisualizer = ({ nfa }) => {
           },
         }}
       >
-        <Background color="#f1f5f9" gap={16} />
+        <Background color="#ffffff" gap={16} />
         <Controls />
         <NFAInfoPanel />
       </ReactFlow>
