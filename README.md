@@ -72,8 +72,6 @@ This project is built with:
 
 ## Setup Guide
 
-**Getting Started**
-
 ### Clone the Repository
 
 Use either HTTPS or SSH to clone the project:
