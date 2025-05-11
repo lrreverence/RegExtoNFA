@@ -79,12 +79,12 @@ This project is built with:
 Use either HTTPS or SSH to clone the project:
 - **HTTPS:**  
   ```bash
-  git clone https://github.com/your-username/regex-nfa-dfa-visualizer.git
+  git clone https://github.com/lrreverence/RegExtoNFA.git
   ```
 
 - **SSH:**  
   ```bash
-  git clone git@github.com:your-username/regex-nfa-dfa-visualizer.git
+  git clone git@github.com:lrreverence/RegExtoNFA.git
   ```
 
 Then navigate into the project folder:
